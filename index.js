@@ -1,11 +1,11 @@
-const _recurse = (cur, prop, result) => {
+const _flatten = (cur, prop, result) => {
   let l
 
   if (Object(cur) !== cur) {
     result[prop] = cur
   } else if (Array.isArray(cur)) {
     for (let i = 0, l = cur.length; i < l; i++) {
-      _recurse(cur[i], prop + '[' + i + ']', result)
+      _flatten(cur[i], prop + '[' + i + ']', result)
     }
     if (l == 0) {
       result[prop] = []
@@ -14,7 +14,7 @@ const _recurse = (cur, prop, result) => {
     let isEmpty = true
     for (const p in cur) {
       isEmpty = false
-      _recurse(cur[p], prop ? prop + '.' + p : p, result)
+      _flatten(cur[p], prop ? prop + '.' + p : p, result)
     }
     if (isEmpty && prop) {
       result[prop] = {}
@@ -30,7 +30,7 @@ const _recurse = (cur, prop, result) => {
  */
 const flatten = (data) => {
   const result = {}
-  return _recurse(data, '', result)
+  return _flatten(data, '', result)
 }
 
 /**
