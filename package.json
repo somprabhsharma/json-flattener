@@ -1,0 +1,46 @@
+{
+  "name": "json-flattener",
+  "version": "0.0.1",
+  "description": "Fastest way to flatten un-flatten Nested JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul --include-all-sources cover _mocha -- -u bdd $(find test -name '*.js') && echo All tests passed",
+    "lint": "eslint *.js test && echo Lint Passed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somprabhsharma/json-flattener.git"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "author": "Som Prabh Sharma <somprabhsharma@outlook.com> (http://somprabhsharma.com)",
+  "license": "MIT",
+  "keywords": [
+    "flattener",
+    "unflattener",
+    "json-flattener",
+    "json-unflattener",
+    "nested",
+    "json",
+    "flatten",
+    "unflatten",
+    "flat",
+    "unflat",
+    "object",
+    "array"
+  ],
+  "bugs": {
+    "url": "https://github.com/somprabhsharma/json-flattener/issues"
+  },
+  "homepage": "https://github.com/somprabhsharma/json-flattener#readme",
+  "devDependencies": {
+    "eslint": "4.9.0",
+    "eslint-config-airbnb-base": "12.0.2",
+    "eslint-plugin-import": "2.7.0",
+    "istanbul": "0.4.5",
+    "mocha": "4.0.1",
+    "pre-commit": "1.2.2",
+    "should": "13.1.2"
+  }
+}
