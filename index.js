@@ -1,3 +1,4 @@
+'use strict'
 const _flatten = (cur, prop, result) => {
   let l
 
